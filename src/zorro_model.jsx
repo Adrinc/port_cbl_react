@@ -1,6 +1,6 @@
 import { useAnimations, useGLTF } from '@react-three/drei'
 /*  import { useLoader } from '@react-three/fiber' 
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js' */
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js' */ 
 import React from 'react'
 import { useEffect } from 'react'
 import { useControls } from 'leva'
