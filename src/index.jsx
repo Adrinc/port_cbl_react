@@ -4,12 +4,23 @@ import { Canvas } from '@react-three/fiber'
 import Experience from './Experience.jsx'
 import NavigationBar from './navigation_bar.jsx'
 import * as THREE from 'three'
+import { useEffect, useRef } from 'react'
 
 
 const root = ReactDOM.createRoot(document.querySelector('#root'))
 
+
+
 root.render(
     <Canvas
+    dpr={[0.5, 1.2]}
+    performance= {{ 
+        current: 1,
+        min: 0.1,
+        max: 1,
+        debounce: 200,
+        regress: 0.5
+      }}
         shadows
         camera={ {
             fov: 45,
