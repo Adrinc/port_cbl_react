@@ -18,3 +18,59 @@ body,
 
     border-radius: 20px 20px 0 0;
 }
+
+
+
+
+
+
+
+
+
+
+#navigationbar {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+}
+
+.nav-point {
+    width: 10px;
+    height: 10px;
+    background: white;
+    opacity: 0.3;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+
+.nav-point-container {
+    display: flex;
+    align-items: center;
+}
+
+
+.nav-text {
+    color: white;
+    opacity: 0.3;
+    margin-left: 5px; /* Espacio entre el punto y el texto */
+    font-size: 12px; /* Tamaño de fuente adecuado */
+    line-height: 10px; /* Alinear verticalmente con el punto */
+    transition: opacity 0.3s ease; /* Transición solo en la opacidad */
+}
+
+
+.nav-point.active{
+    width: 15px;
+    height: 15px;
+    opacity: 1;
+}
+
+.nav-text.active {
+    opacity: 1; /* Solo cambia la opacidad para el texto activo */
+}

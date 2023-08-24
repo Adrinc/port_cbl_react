@@ -2,6 +2,7 @@ import './style.css'
 import ReactDOM from 'react-dom/client'
 import { Canvas } from '@react-three/fiber'
 import Experience from './Experience.jsx'
+import NavigationBar from './navigation_bar.jsx'
 import * as THREE from 'three'
 
 
@@ -13,8 +14,9 @@ root.render(
         camera={ {
             fov: 45,
             near: 0.1,
-            far: 200,
-            position: [ - 4, 3, 6 ]
+            far: 2000,
+            position: [ 2, 3, 6.3 ],
+            rotation: [ 0, 0, 0 ]
         } }
         gl={ { 
             antialias: false,
@@ -30,5 +32,6 @@ root.render(
         } }
     >
         <Experience />
+        <NavigationBar />
     </Canvas>
 )
