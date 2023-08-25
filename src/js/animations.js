@@ -1,6 +1,5 @@
 import { gsap } from "gsap";
 import globalVariables from './globals.js';
-import { setActivePoint } from './barra_navegacion.js';
 
 export class AnimationsGsap{
 
@@ -16,7 +15,6 @@ export class AnimationsGsap{
         renderer.shadowMap.autoUpdate = false;
         globalVariables.nowWatching = 'animationToRoot';
         globalVariables.listenMouseWheel=true;
-        setActivePoint('animationToRoot');
         scene.getObjectByName('grid').animateGrid = false;
         scene.remove(scene.getObjectByName('grid'));
         }
@@ -42,7 +40,7 @@ export class AnimationsGsap{
     gsap.to(camera.rotation, {duration: 1.25, x: 0.1, y: 0, z: 0, ease: "power2.inOut",
     onComplete: () => { 
         globalVariables.listenMouseWheel=true;
-        setActivePoint('animationToTelevisor');
+       
     }});
 
 }
@@ -54,7 +52,7 @@ export class AnimationsGsap{
     gsap.to(camera.rotation, {duration: 1.25, x: 0, y: 0, z: 0, ease: "power2.inOut",
     onComplete: () => { 
         globalVariables.listenMouseWheel=true;
-        setActivePoint('animationToTelevisorZoom');
+      
      
     }});
 }
@@ -66,7 +64,7 @@ export class AnimationsGsap{
     gsap.to(camera.rotation, {duration: 1.25, x: 0, y: 0, z: 0, ease: "power2.inOut",
     onComplete: () => { 
         globalVariables.listenMouseWheel=true;
-        setActivePoint('animationToMainMenu');
+     
     
     }});
 }
@@ -77,7 +75,7 @@ export class AnimationsGsap{
     gsap.to(camera.rotation, {duration: 1.25, x: 0, y: 0, z: 0, ease: "power2.inOut",
     onComplete: () => { 
         globalVariables.listenMouseWheel=true;
-        setActivePoint('animationToRoot');
+     
     }});
 }
  animationToGalaxy(camera){
@@ -87,7 +85,7 @@ export class AnimationsGsap{
     gsap.to(camera.rotation, {duration: 1.25, x: 0, y: 1.55, z: 0, ease: "power2.inOut",
     onComplete: () => { 
         globalVariables.listenMouseWheel=true;
-        setActivePoint('animationToGalaxy');
+     
     
     }});
 }
@@ -99,7 +97,7 @@ animationToNosotros(camera){
     gsap.to(camera.rotation, {duration: 1.25, x: 0, y: 1.57, z: 0, ease: "power2.inOut",
     onComplete: () => { 
         globalVariables.listenMouseWheel=true;
-        setActivePoint('animationToProyectos');
+     
     
     }});
 }
