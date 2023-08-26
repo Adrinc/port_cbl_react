@@ -1,4 +1,4 @@
-import { Environment, ScrollControls, useScroll, OrbitControls, Scroll } from '@react-three/drei';
+import { Sparkles, Environment, ScrollControls, useScroll, OrbitControls, Scroll } from '@react-three/drei';
 import { Perf } from 'r3f-perf';
 import React, { Suspense, useState, useRef } from 'react';
 import Placeholder from './Placeholder';
@@ -8,6 +8,7 @@ import { vignetteConfig, chromaticAberrationConfig, bloomConfig, noiseConfig, to
 import Cbl from './testnweb';
 import { useFrame } from '@react-three/fiber';
 import VideoTextureCBLUNA from './video';
+
 
 export default function Experienc(props) {
 
@@ -26,6 +27,8 @@ export default function Experienc(props) {
           <Noise {...noiseConfig} />
         </EffectComposer>
       </Suspense>
+    
+ 
 
   <Environment {...enviromentConfig} />
  {/*  <pointLight
@@ -41,6 +44,7 @@ export default function Experienc(props) {
  
   <Suspense fallback={<Placeholder position-y={1} scale={[2, 3, 2]} />}>
     <Scroll>
+    <Sparkles count={150} speed={0.1} position={[2,3,2]} scale={[8,8,3]} size={[1.5,1.5,1.5]} />
     <Cbl position={[1.8, -18, -5]} rotation-x={1.6} />
   {/* <VideoTextureCBLUNA scale={0.7}/> */}
   </Scroll>
