@@ -1,9 +1,13 @@
 import './style.css'
+import './index.css'
 import ReactDOM from 'react-dom/client'
 import { Canvas } from '@react-three/fiber'
 import Experience from './Experience.jsx'
 import * as THREE from 'three'
 import { useEffect, useRef } from 'react'
+import Navbar from './components/navbar'
+
+
 
 
 const root = ReactDOM.createRoot(document.querySelector('#root'))
@@ -11,6 +15,9 @@ const root = ReactDOM.createRoot(document.querySelector('#root'))
 
 
 root.render(
+    <>
+    <Navbar />
+   
     <Canvas
     dpr={[0.5, 1.2]}
     performance= {{ 
@@ -32,7 +39,7 @@ root.render(
             antialias: false,
             alpha: true,
             powerPreference: "high-performance",
-            /* physicallyCorrectLights: true, */
+           
             stencil: false,
             depth: false, 
             toneMapping: THREE.NoToneMapping,
@@ -43,4 +50,5 @@ root.render(
     >
         <Experience />
     </Canvas>
+    </>
 )

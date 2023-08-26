@@ -22,7 +22,7 @@ import * as THREE from 'three'
         name: 'directional_light',
         castShadow: true,
         intensity: 16,
-        position: [2.9, 7, -14.5],
+        position: [2.9, 7, 7],
         penumbra: 0.5,
         color: '#2e2e30',
       };

@@ -8,9 +8,9 @@ export default  function VideoTextureCBLUNA (props)  {
   const texture = useVideoTexture('./videos/10.mp4');
        
   return (
-    <mesh {...props} position={[-10.1,4.4,-27.2]}>
-      <planeGeometry args={[15.2,7.8]} />
-      <meshBasicMaterial  map={texture} encoding={THREE.SRGBColorSpace} toneMapped={false}  />
+    <mesh {...props} position={[0.8,-10,-4]}>
+      <planeGeometry args={[8,5]} />
+      <meshBasicMaterial  map={texture} /* encoding={THREE.SRGBColorSpace} toneMapped={false}   *//>
     </mesh>
   );
 };
