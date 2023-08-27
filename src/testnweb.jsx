@@ -2,10 +2,14 @@
 import { useAnimations, useGLTF } from '@react-three/drei'
 import React from 'react'
 import { useEffect } from 'react'
+import { TextComponents } from './text/maintext';
+//import Text from drei
+
 
 
 export default function Cbl(props)
 {
+  
 
   const handleOnClick = (intersect) => {
     
@@ -13,8 +17,21 @@ export default function Cbl(props)
     intersect.stopPropagation();
     start();
     
-   /*  console.log(intersect);
-    console.log(intersect.object.name); */
+    console.log(intersect);
+    console.log(intersect.object.name);
+    //get material current color
+    console.log(intersect.object.material.color);
+    //change material color
+  
+    // if color is red, change to blue
+    if (intersect.object.material.color === '#ff0000') {
+      intersect.object.material.color.set('"#0000ff"');
+    }
+    else {
+      intersect.object.material.color.set('#ff0000');
+
+    }
+
 };
 
 const handleOnPointerEnter = (intersect) => {
@@ -115,36 +132,14 @@ const handleOnPointerLeave = (intersect) => {
           position={[-1.617, 0.873, -19.144]}
           scale={[0.82, 0.675, 0.359]}
         />
-        <mesh
-          geometry={nodes.prueba_tu_internet.geometry}
-          material={materials.emisive_white}
-          position={[0.142, 0.749, -22.625]}
-          scale={0.533}
-        />
-        <mesh
-          geometry={nodes.subida.geometry}
-          material={materials.emisive_white}
-          position={[2.171, 0.713, -19.631]}
-          scale={0.482}
-        />
-        <mesh
-          geometry={nodes.bajada.geometry}
-          material={materials.emisive_white}
-          position={[-1.554, 0.713, -19.668]}
-          scale={0.482}
-        />
+       
         <mesh
           geometry={nodes.universe.geometry}
           material={materials.universe}
           position={[0.209, 0.097, -20.724]}
           scale={[9.826, 7.174, 9.495]}
         />
-        <mesh
-          geometry={nodes.Iniciar.geometry}
-          material={materials.emisive_white}
-          position={[-0.179, 1.163, -17.804]}
-          scale={0.367}
-        />
+       
         <mesh
           geometry={nodes.galaxia.geometry}
           material={materials.galaxia}
@@ -178,12 +173,7 @@ const handleOnPointerLeave = (intersect) => {
           position={[-3.228, 1.062, 2.018]}
           scale={[1.453, 1, 1]}
         />
-        <mesh
-          geometry={nodes.Texto.geometry}
-          material={materials.emisive_white}
-          position={[-3.824, 1.096, 2.147]}
-          scale={0.378}
-        />
+     
         <mesh
           geometry={nodes.spotLight.geometry}
           material={materials.spotLight}

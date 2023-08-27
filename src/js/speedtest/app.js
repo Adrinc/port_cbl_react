@@ -131,7 +131,7 @@ function resetValues(){
   pingSendLength = openSpeedTestServerList.length;
 
   Startit = 0;
-  myname = "RTA";
+  myname = "CBLUNA";
   com = ".com";
   ost = myname;
   showResult = 0;
@@ -491,6 +491,7 @@ function OpenSpeedtest() {
       if (Startit == 0) {
         Startit = 1;
        /*  Show.showStatus("Testing download speed.."); */
+       window.speedTestStatus="downloading";
         var extraTime = (window.performance.now() - downloadTime) / 1000;
         dReset = extraTime;
         Show.progress(1, dlDuration + 2.5);
@@ -504,10 +505,12 @@ function OpenSpeedtest() {
       downloadSpeed = Get.AvgSpeed(currentSpeed, dlFinal, dlDuration);
       if (downloadTimeing >= dlDuration && ProG == "done") {
         if (SelectTest) {
+          window.speedTestStatus="downloaded";
           Show.GaugeProgresstoZero(currentSpeed/1000, "SendR");
           Show.showStatus("All done download");
           Show.Symbol(2);
         } else {
+          window.speedTestStatus="downloaded";
           Show.GaugeProgresstoZero(currentSpeed/1000, "Upload");
         }
         Show.downloadResult(downloadSpeed/1000); // <-- aqui se muestra el resultado de la prueba de velocidad reducido de Mb/s a Gb/s
@@ -537,6 +540,7 @@ function OpenSpeedtest() {
         currentSpeed = 0;
         Get.reset();
         Show.reset();
+        window.speedTestStatus="uploading";
         var extraUTime = (window.performance.now() - uploadTime) / 1000;
         uReset = extraUTime;
         Show.progress(false, ulDuration + 2.5);
@@ -550,6 +554,7 @@ function OpenSpeedtest() {
       uploadSpeed = Get.AvgSpeed(currentSpeed, ulFinal, ulDuration);
       if (uploadTimeing >= ulDuration && stop == 1) {
         dataUsedforul = uLoaded;
+        window.speedTestStatus="uploaded";
         Show.uploadResult(uploadSpeed/1000); //Convertir Mbps a Gbps
         Show.GaugeProgresstoZero(currentSpeed/1000, "SendR");
         SendData = undefined;
@@ -1000,6 +1005,11 @@ function openSpeedtestEngine(){
     stopTest = true;
     var Show = new openSpeedtestShow();
     Show.GaugeProgresstoZero(0, "SendR");
+    window.speedTest=0;
+    window.resultdownload=0;
+    window.resultupload=0;
+    window.speedTestStatus="stop";
+
     resetValues();
     resetVisuals();
     resetAnimation();

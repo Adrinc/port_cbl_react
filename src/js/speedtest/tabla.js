@@ -5,6 +5,7 @@ window.speedTest=0;
 window.resultdownload=0;
 window.resultupload=0;
 
+window.speedTestStatus="stop";
 
 
 
@@ -36,11 +37,39 @@ function setVelocidad(speed) {
   if (speed >= 10000) {
     rotationAngle = maxAngle;
   }
-  window.speedTest=speed;
+  if (window.speedTestStatus=="downloading"){
+  window.resultdownload=speed;
+  }
+  else if (window.speedTestStatus=="uploading"){
+    window.resultupload=speed;
+  }
+
+
+
+
+
 /*   console.log(speedTest); */
 
 /*   arrow.style.setProperty("--rotation", `${rotationAngle}deg`); */
 /*    console.log("angulo rotacion z: "+rotationAngle); */
+
+}
+  
+function setDescarga(download) {
+  
+     
+  console.log(download.toFixed(3) + " G");
+  console.log((download * 1000).toFixed(1) + " MB");
+
+  
+  
+  download=download*1000;
+  window.resultdownload=download;
+
+ /*  console.log("Download: "+ download); */
+  //download=58;
+/*   setArrowRotation("manecilla_verde", download); */
+
 
 }
 
@@ -53,6 +82,7 @@ function setVelocidad(speed) {
     console.log(upload.toFixed(3) + " G");
     console.log((upload * 1000).toFixed(1) + " MB");
 
+    
     upload=upload*1000;
     window.resultupload=upload;
 
@@ -62,22 +92,7 @@ function setVelocidad(speed) {
 
   }
   
-  function setDescarga(download) {
-  
-     
-      console.log(download.toFixed(3) + " G");
-      console.log((download * 1000).toFixed(1) + " MB");
-
-    
-      download=download*1000;
-      window.resultdownload=download;
-     /*  console.log("Download: "+ download); */
-      //download=58;
-/*   setArrowRotation("manecilla_verde", download); */
-
-
-  }
-  
+ 
 
 
   function setArrowRotation(arrow, speed) {
@@ -127,8 +142,12 @@ function setVelocidad(speed) {
 
 
   function initTest() {
- 
-
+    window.testingDownloadFinish=false;
+    window.testingUploadFinish=false;
+    window.resultdownload=0;
+    window.resultupload=0;
+    window.testingDownload=true;
+    window.testingUpload=false;
   runTasks();
 /*   document.getElementById("startButtonDesk").disabled = true;
   document.getElementById("startButtonDesk").classList.add("disabled");
