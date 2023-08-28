@@ -1,16 +1,18 @@
 import React from 'react';
+import { useAppContext } from '../AppContext';
 
-const Navbar = () => {
+export default function Navbar  ({ scrollToSection })  {
   return (
+    <>
     <nav className="bg-black text-white p-4">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-xl font-bold">Mi Sitio Web</div>
         <div className="hidden md:flex space-x-4">
-          <a href="#" className="hover:underline">Home</a>
-          <a href="#" className="hover:underline">Nosotros</a>
-          <a href="#" className="hover:underline">Proyectos</a>
-          <a href="#" className="hover:underline">Servicios</a>
-          <a href="#" className="hover:underline">Contacto</a>
+        <a href="#" className="hover:underline" onClick={() => scrollToSection(universeRef)}>Home</a>
+          <a href="#" className="hover:underline" onClick={() => scrollToSection(plane11Ref)}>Nosotros</a>
+          <a href="#" className="hover:underline" onClick={() => scrollToSection(cuboRef)}>Proyectos</a>
+          <a href="#" className="hover:underline" onClick={() => scrollToSection(confetiRef)}>Servicios</a>
+          <a href="#" className="hover:underline" onClick={() => scrollToSection(partyRef)}>Contacto</a>
         </div>
         <div className="md:hidden">
           {/* Icono de menú responsive */}
@@ -20,7 +22,8 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
+  </>
   );
 };
 
-export default Navbar;
+
