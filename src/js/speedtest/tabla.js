@@ -58,8 +58,8 @@ function setVelocidad(speed) {
 function setDescarga(download) {
   
      
-  console.log(download.toFixed(3) + " G");
-  console.log((download * 1000).toFixed(1) + " MB");
+/*   console.log(download.toFixed(3) + " G");
+  console.log((download * 1000).toFixed(1) + " MB"); */
 
   
   
@@ -79,9 +79,9 @@ function setDescarga(download) {
     document.getElementById("circle-upload-mbps").innerHTML = (upload * 1000).toFixed(1) + " MB";
  */
     
-    console.log(upload.toFixed(3) + " G");
+/*     console.log(upload.toFixed(3) + " G");
     console.log((upload * 1000).toFixed(1) + " MB");
-
+ */
     
     upload=upload*1000;
     window.resultupload=upload;
