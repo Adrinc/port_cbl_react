@@ -14,7 +14,7 @@ export default function Experience()
 
     
     return <> 
-    <Perf position="top-left" />
+{/*     <Perf position="top-left" /> */}
     <color attach="background" args={["#000"]} />
     
     <Suspense fallback={null}>
