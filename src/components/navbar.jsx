@@ -27,7 +27,7 @@ export default function Navbar({ scrollToSection }) {
           <a href="#" className="hover:underline" onClick={() => scrollToSection(confetiRef)}>Servicios</a>
           <a href="#" className="hover:underline" onClick={() => scrollToSection(partyRef)}>Contacto</a> */}
 
-          <div className="hidden md:flex space-x-4 font-semibold ">
+          <div className="hidden md:flex space-x-5 font-medium">
           <a href="#" className={`hover:underline ${selectedSection === 'Inicio' ? 'text-blue-500' : ''}`} onClick={() => handleSectionClick('Inicio')} style={{ fontFamily: 'Sora' }}> Inicio</a>
           <a href="#" className={`hover:underline ${selectedSection === 'Nosotros' ? 'text-blue-500' : ''}`} onClick={() => handleSectionClick('Nosotros')} style={{ fontFamily: 'Sora' }}> Nosotros</a>
           <a href="#" className={`hover:underline ${selectedSection === 'Proyectos' ? 'text-blue-500' : ''}`} onClick={() => handleSectionClick('Proyectos')} style={{ fontFamily: 'Sora' }}> Proyectos</a>
