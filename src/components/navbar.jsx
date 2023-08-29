@@ -10,14 +10,14 @@ export default function Navbar({ scrollToSection }) {
   };
 
   return (
-    <nav className="bg-black text-white p-2 absolute top-0 left-0 right-0 z-10">
+    <nav className="bg-black text-white p-1 absolute top-0 left-0 right-0 z-10">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <img
+  {/*         <img
             src="./imagenes/logos/cbluna.png"
             alt="Mi Logo"
             className="h-10 w-15 mr-2"
-          />
+          /> */}
         {/*   <div className="text-xl font-bold">Cb</div> */}
         </div>
         <div className="hidden md:flex space-x-4">

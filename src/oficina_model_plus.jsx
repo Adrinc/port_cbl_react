@@ -59,511 +59,454 @@ const handleOnPointerLeave = (intersect) => {
 
 
   return (
-    <group ref={group} {...props} dispose={null}>
-      <group name="Scene">
+    <group {...props} dispose={null}>
+      <mesh
+        name="logo_cbluna"
+        castShadow
+        receiveShadow
+        geometry={nodes.logo_cbluna.geometry}
+        material={materials.luna}
+        position={[1.977, 3.369, -6.189]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={44.087}
+      />
+      <mesh
+        name="sillon"
+        castShadow
+        receiveShadow
+        geometry={nodes.sillon.geometry}
+        material={materials.Material_2146932551}
+        position={[-6.562, 0.917, 0.394]}
+        rotation={[-Math.PI / 2, 0, 0.023]}
+        scale={0.002}
+      />
+      <mesh
+        name="ciudad"
+        castShadow
+        receiveShadow
+        geometry={nodes.ciudad.geometry}
+        material={materials["884171"]}
+        position={[12.933, 4.926, 0.118]}
+        rotation={[-Math.PI / 2, -Math.PI / 2, 0]}
+        scale={[1.531, 2.107, 0.819]}
+      />
+      <group
+        name="escritorio"
+        position={[5.669, 1.509, 0.275]}
+        rotation={[0, 0, -Math.PI / 2]}
+        scale={[3.239, 2.509, 8.43]}
+      >
         <mesh
-          name="logo_cbluna"
+          name="Minimalistic_Modern_Office_Table_0"
           castShadow
           receiveShadow
-          geometry={nodes.logo_cbluna.geometry}
-          material={materials.luna}
-          position={[1.9766, 3.3687, -6.1893]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={44.0873}
+          geometry={nodes.Minimalistic_Modern_Office_Table_0.geometry}
+          material={materials.Table}
         />
         <mesh
-          name="sillon"
+          name="Minimalistic_Modern_Office_Table_0_1"
           castShadow
           receiveShadow
-          geometry={nodes.sillon.geometry}
-          material={materials.Material_2146932551}
-          position={[-6.5624, 0.9174, 0.3941]}
-          rotation={[-Math.PI / 2, 0, 0.0229]}
-          scale={[0.0022, 0.0023, 0.0023]}
-        />
-        <mesh
-          name="ciudad"
-          castShadow
-          receiveShadow
-          geometry={nodes.ciudad.geometry}
-          material={materials["884171"]}
-          position={[12.9332, 4.9264, 0.1184]}
-          rotation={[-Math.PI / 2, -Math.PI / 2, 0]}
-          scale={[1.5308, 2.1069, 0.819]}
-        />
-        <group
-          name="escritorio"
-          position={[5.669, 1.509, 0.2754]}
-          rotation={[0, 0, -Math.PI / 2]}
-          scale={[3.2388, 2.5086, 8.4297]}
-        >
-          <mesh
-            name="Minimalistic_Modern_Office_Table_0"
-            castShadow
-            receiveShadow
-            geometry={nodes.Minimalistic_Modern_Office_Table_0.geometry}
-            material={materials.Table}
-          />
-          <mesh
-            name="Minimalistic_Modern_Office_Table_0_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Minimalistic_Modern_Office_Table_0_1.geometry}
-            material={materials["Material.004"]}
-          />
-        </group>
-        <mesh
-          name="silla"
-          castShadow
-          receiveShadow
-          geometry={nodes.silla.geometry}
-          material={materials.OfficeChair_Modern}
-          position={[7.5847, 1.052, 0.3504]}
-          rotation={[Math.PI, -1.5582, Math.PI]}
-          scale={0.0235}
-        />
-        <mesh
-          name="ventana"
-          castShadow
-          receiveShadow
-          geometry={nodes.ventana.geometry}
-          material={materials.Window}
-          position={[9.044, 3.7542, 1.0195]}
-          rotation={[Math.PI / 2, 0, Math.PI]}
-          scale={[2.9461, 5.5128, 3.5582]}
-        />
-        <group
-          name="macbook_cuerpo"
-          position={[5.5923, 1.8587, 0.2377]}
-          rotation={[-1.5696, -0.1116, 1.5816]}
-          scale={0.362}
-        >
-          <mesh
-            name="Object_12"
-            castShadow
-            receiveShadow
-            geometry={nodes.Object_12.geometry}
-            material={materials["Material.007"]}
-          />
-          <mesh
-            name="Object_12_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Object_12_1.geometry}
-            material={materials["Material.003"]}
-          />
-          <mesh
-            name="Object_12_2"
-            castShadow
-            receiveShadow
-            geometry={nodes.Object_12_2.geometry}
-            material={materials["Material.016"]}
-          />
-          <mesh
-            name="Object_12_3"
-            castShadow
-            receiveShadow
-            geometry={nodes.Object_12_3.geometry}
-            material={materials["Material.004"]}
-          />
-          <mesh
-            name="Object_12_4"
-            castShadow
-            receiveShadow
-            geometry={nodes.Object_12_4.geometry}
-            material={materials["Material.005"]}
-          />
-        </group>
-        <group
-          name="switch"
-          position={[6.494, 3.2327, -6.1496]}
-          rotation={[-1.471, 0, 0]}
-          scale={[0.2764, 0.1116, 0.2753]}
-        >
-          <mesh
-            name="Switch_Mat3_0"
-            castShadow
-            receiveShadow
-            geometry={nodes.Switch_Mat3_0.geometry}
-            material={materials.Mat3}
-          />
-          <mesh
-            name="Switch_Mat3_0_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Switch_Mat3_0_1.geometry}
-            material={materials.Mat1}
-          />
-          <mesh
-            name="Switch_Mat3_0_2"
-            castShadow
-            receiveShadow
-            geometry={nodes.Switch_Mat3_0_2.geometry}
-            material={materials.Mat2}
-          />
-        </group>
-        <group
-          name="box_universo"
-          position={[-11.597, 3.445, -0.2599]}
-          rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={[0.0191, 0.0102, 0.0187]}
-        >
-          <mesh
-            name="box_universo_1"
-            
-            geometry={nodes.box_universo_1.geometry}
-            material={materials.polvostelar}
-          />
-          <mesh
-            name="box_universo_2"
-            
-            geometry={nodes.box_universo_2.geometry}
-            material={materials.meteorito}
-          />
-          <mesh
-            name="box_universo_3"
-            
-            geometry={nodes.box_universo_3.geometry}
-            material={materials["galaxy-7876008_960_720"]}
-          />
-          <mesh
-            name="box_universo_4"
-            
-            geometry={nodes.box_universo_4.geometry}
-            material={materials["Homepage-Hero3-1-e1687451740492-1"]}
-          />
-          <mesh
-            name="box_universo_5"
-            
-            geometry={nodes.box_universo_5.geometry}
-            material={materials.Material}
-          />
-          <mesh
-            name="box_universo_6"
-            
-            geometry={nodes.box_universo_6.geometry}
-            material={materials.Will_Energy}
-          />
-          <mesh
-            name="box_universo_7"
-            
-            geometry={nodes.box_universo_7.geometry}
-            material={materials.f37b5273252024d60d9bb5c73bccd627}
-          />
-          <mesh
-            name="box_universo_8"
-            
-            geometry={nodes.box_universo_8.geometry}
-            material={materials.fa869743d08ca95414a50cc0ec1526bd}
-          />
-          <mesh
-            name="box_universo_9"
-            
-            geometry={nodes.box_universo_9.geometry}
-            material={materials["Space-Planet-PNG-Transparent-Image"]}
-          />
-          <mesh
-            name="box_universo_10"
-            
-            geometry={nodes.box_universo_10.geometry}
-            material={materials.Populated_Planet}
-          />
-        </group>
-        <mesh
-          name="box_satelite"
-          geometry={nodes.box_satelite.geometry}
-          material={materials["58bf1fa0e443f41d77c734c2"]}
-          position={[-10.8089, 3.2547, 0.0925]}
-          rotation={[1.1852, 0, -Math.PI / 2]}
-          scale={[0.6452, 0.6452, 0.8544]}
-        />
-        <mesh
-          name="box_astronauta"
-          geometry={nodes.box_astronauta.geometry}
-          material={materials.b6d6d2cc537c92c2e04e96da807200d8}
-          position={[-10.7344, 3.0855, -0.12]}
-          rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={[0.168, 0.0898, 0.1642]}
-        />
-        <group
-          name="macbook_pantalla"
-          position={[5.5802, 2.2562, 0.2383]}
-          rotation={[-1.5696, -0.0004, 1.5815]}
-          scale={0.362}
-        >
-          <mesh
-            name="Object_12001"
-            castShadow
-            receiveShadow
-            geometry={nodes.Object_12001.geometry}
-            material={materials["Material.007"]}
-          />
-          <mesh
-            name="Object_12001_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Object_12001_1.geometry}
-            material={materials["Material.003"]}
-          />
-        </group>
-        <mesh
-          name="macbook_letras"
-          castShadow
-          receiveShadow
-          geometry={nodes.macbook_letras.geometry}
-          material={materials["Material.005"]}
-          position={[5.5923, 1.8587, 0.2377]}
-          rotation={[-1.5696, -0.1116, 1.5816]}
-          scale={0.362}
-        />
-        <mesh
-          name="Plano"
-          castShadow
-          receiveShadow
-          geometry={nodes.Plano.geometry}
-          material={materials.pared_invisible}
-          position={[-0.9198, 3.2151, 6.025]}
-          rotation={[Math.PI / 2, 0, Math.PI]}
-          scale={[9.9736, 1, 3.4431]}
-        />
-        <group
-          name="planta"
-          position={[7.5982, 1.5482, -5.2916]}
-          rotation={[-1.5659, 0.0136, -3.0821]}
-          scale={0.436}
-        >
-          <mesh
-            name="Cylinder003_0"
-            castShadow
-            receiveShadow
-            geometry={nodes.Cylinder003_0.geometry}
-            material={materials.Mat1}
-          />
-          <mesh
-            name="Cylinder003_0_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Cylinder003_0_1.geometry}
-            material={materials.hojas}
-          />
-        </group>
-        <mesh
-          name="techo_marco"
-          castShadow
-          receiveShadow
-          geometry={nodes.techo_marco.geometry}
-          material={materials["Mat1.001"]}
-          position={[-0.8691, 6.1489, 3.2113]}
-          rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={3.4907}
-        />
-        <mesh
-          name="puerta"
-          castShadow
-          receiveShadow
-          geometry={nodes.puerta.geometry}
-          material={materials["Material.010"]}
-          position={[0.7572, 2.6775, 12.8556]}
-          rotation={[-Math.PI / 2, 0, 1.5748]}
-          scale={[0.1126, 0.1126, 0.1082]}
-        />
-        <mesh
-          name="Suelo"
-          castShadow
-          receiveShadow
-          geometry={nodes.Suelo.geometry}
-          material={materials.floor}
-          position={[-0.9301, 0.0191, 3.2153]}
-          scale={[10.0485, 1.0926, 6.2897]}
-        />
-        <mesh
-          name="tv_screen"
-          castShadow
-          receiveShadow
-          geometry={nodes.tv_screen.geometry}
-          material={materials.parallel}
-          position={[-6.5786, 3.6783, -6.0619]}
-          rotation={[Math.PI / 2, 0, 0.0013]}
-          scale={[3.4584, 3.9194, 3.9825]}
-          onClick={handleOnClick}
-          onPointerEnter={handleOnPointerEnter}
-          onPointerLeave={handleOnPointerLeave}
-        />
-        <group
-          name="tv_marco"
-          position={[-6.5597, 3.6794, -6.2842]}
-          scale={[3.9395, 2.3143, 0.2456]}
-        >
-          <mesh
-            name="Cubo011"
-            castShadow
-            receiveShadow
-            geometry={nodes.Cubo011.geometry}
-            material={materials.tvblack}
-          />
-          <mesh
-            name="Cubo011_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Cubo011_1.geometry}
-            material={materials.logo}
-          />
-        </group>
-        <mesh
-          name="lampara_techo"
-          castShadow
-          receiveShadow
-          geometry={nodes.lampara_techo.geometry}
-          material={materials.vidroFoco}
-          position={[-0.0076, 6.3524, 0.2385]}
-          rotation={[0, -0.5401, Math.PI]}
-          scale={[0.4928, 0.0476, 0.4928]}
-        />
-        <mesh
-          name="mesita"
-          castShadow
-          receiveShadow
-          geometry={nodes.mesita.geometry}
-          material={materials.Mat1}
-          position={[-6.4432, 0.5176, 0.4605]}
-          scale={[0.5511, 0.4867, 0.4867]}
-        />
-        <group
-          name="room"
-          position={[-0.8379, 3.3589, -0.167]}
-          scale={[14.1397, 5.3539, 6.28]}
-        >
-          <mesh
-            name="Cubo"
-            castShadow
-            receiveShadow
-            geometry={nodes.Cubo.geometry}
-            material={materials["Material.001"]}
-          />
-          <mesh
-            name="Cubo_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Cubo_1.geometry}
-            material={materials.techo}
-          />
-        </group>
-        <mesh
-          name="nodo_nosotros"
-          castShadow
-          receiveShadow
-          geometry={nodes.nodo_nosotros.geometry}
-          material={nodes.nodo_nosotros.material}
-          position={[-1.6203, 2.7792, -6.2026]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={[0.4677, 0.1128, 0.4677]}
-          onClick={handleOnClick}
-          onPointerEnter={handleOnPointerEnter}
-          onPointerLeave={handleOnPointerLeave}
-        />
-        <mesh
-          name="nodo_proyectos"
-          castShadow
-          receiveShadow
-          geometry={nodes.nodo_proyectos.geometry}
-          material={nodes.nodo_proyectos.material}
-          position={[0.1763, 4.6116, -6.1421]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={[0.4677, 0.1128, 0.4677]}
-          onClick={handleOnClick}
-          onPointerEnter={handleOnPointerEnter}
-          onPointerLeave={handleOnPointerLeave}
-        />
-        <mesh
-          name="Opciones"
-          castShadow
-          receiveShadow
-          geometry={nodes.Opciones.geometry}
-          material={materials.luna}
-          position={[1.1427, 1.5732, -6.1309]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.4699}
-        />
-        <mesh
-          name="nodo_servicios"
-          castShadow
-          receiveShadow
-          geometry={nodes.nodo_servicios.geometry}
-          material={nodes.nodo_servicios.material}
-          position={[1.0205, 0.8582, -6.1421]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={[0.4677, 0.1128, 0.4677]}
-          onClick={handleOnClick}
-          onPointerEnter={handleOnPointerEnter}
-          onPointerLeave={handleOnPointerLeave}
-        />
-        <mesh
-          name="nodo_contacto"
-          castShadow
-          receiveShadow
-          geometry={nodes.nodo_contacto.geometry}
-          material={nodes.nodo_contacto.material}
-          position={[4.004, 1.8765, -6.1421]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={[0.4677, 0.1128, 0.4677]}
-          onClick={handleOnClick}
-          onPointerEnter={handleOnPointerEnter}
-          onPointerLeave={handleOnPointerLeave}
-        />
-        <mesh
-          name="nodo_desarrollo"
-          castShadow
-          receiveShadow
-          geometry={nodes.nodo_desarrollo.geometry}
-          material={nodes.nodo_desarrollo.material}
-          position={[3.8594, 4.1595, -6.1421]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={[0.4677, 0.1128, 0.4677]}
-          onClick={handleOnClick}
-          onPointerEnter={handleOnPointerEnter}
-          onPointerLeave={handleOnPointerLeave}
-        />
-        <group
-          name="Círculo002"
-          position={[-0.0114, 6.3221, 0.2305]}
-          scale={0.4338}
-        >
-          <mesh
-            name="Círculo"
-            castShadow
-            receiveShadow
-            geometry={nodes.Círculo.geometry}
-            material={materials.white}
-          />
-          <mesh
-            name="Círculo_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Círculo_1.geometry}
-            material={materials.tvblack}
-          />
-        </group>
-        <mesh
-          name="ventana_marco"
-          castShadow
-          receiveShadow
-          geometry={nodes.ventana_marco.geometry}
-          material={materials.tvblack}
-          position={[8.6727, 3.421, 0.0443]}
-          rotation={[0, Math.PI / 2, 0]}
-          scale={[4.9777, 2.3018, 0.297]}
-        />
-        <mesh
-          name="galaxia_marco"
-          castShadow
-          receiveShadow
-          geometry={nodes.galaxia_marco.geometry}
-          material={materials.tvblack}
-          position={[-10.7397, 3.4907, 0.0996]}
-          rotation={[0, Math.PI / 2, 0]}
-          scale={[2.5919, 1.5403, 0.0668]}
+          geometry={nodes.Minimalistic_Modern_Office_Table_0_1.geometry}
+          material={materials["Material.004"]}
         />
       </group>
+      <mesh
+        name="silla"
+        castShadow
+        receiveShadow
+        geometry={nodes.silla.geometry}
+        material={materials.OfficeChair_Modern}
+        position={[7.585, 1.052, 0.35]}
+        rotation={[Math.PI, -1.558, Math.PI]}
+        scale={0.023}
+      />
+      <mesh
+        name="ventana"
+        castShadow
+        receiveShadow
+        geometry={nodes.ventana.geometry}
+        material={materials.Window}
+        position={[9.044, 3.754, 1.02]}
+        rotation={[Math.PI / 2, 0, Math.PI]}
+        scale={[2.946, 5.513, 3.558]}
+      />
+      <group
+        name="macbook_cuerpo"
+        position={[5.592, 1.859, 0.238]}
+        rotation={[-1.57, -0.112, 1.582]}
+        scale={0.362}
+      >
+        <mesh
+          name="Object_12"
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_12.geometry}
+          material={materials["Material.007"]}
+        />
+        <mesh
+          name="Object_12_1"
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_12_1.geometry}
+          material={materials["Material.003"]}
+        />
+        <mesh
+          name="Object_12_2"
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_12_2.geometry}
+          material={materials["Material.016"]}
+        />
+        <mesh
+          name="Object_12_3"
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_12_3.geometry}
+          material={materials["Material.004"]}
+        />
+        <mesh
+          name="Object_12_4"
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_12_4.geometry}
+          material={materials["Material.005"]}
+        />
+      </group>
+      <group
+        name="switch"
+        position={[6.494, 3.233, -6.15]}
+        rotation={[-1.471, 0, 0]}
+        scale={[0.276, 0.112, 0.275]}
+      >
+        <mesh
+          name="Switch_Mat3_0"
+          castShadow
+          receiveShadow
+          geometry={nodes.Switch_Mat3_0.geometry}
+          material={materials.Mat3}
+        />
+        <mesh
+          name="Switch_Mat3_0_1"
+          castShadow
+          receiveShadow
+          geometry={nodes.Switch_Mat3_0_1.geometry}
+          material={materials.Mat1}
+        />
+        <mesh
+          name="Switch_Mat3_0_2"
+          castShadow
+          receiveShadow
+          geometry={nodes.Switch_Mat3_0_2.geometry}
+          material={materials.Mat2}
+        />
+      </group>
+      <group
+        name="macbook_pantalla"
+        position={[5.58, 2.256, 0.238]}
+        rotation={[-1.57, 0, 1.582]}
+        scale={0.362}
+      >
+        <mesh
+          name="Object_12001"
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_12001.geometry}
+          material={materials["Material.007"]}
+        />
+        <mesh
+          name="Object_12001_1"
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_12001_1.geometry}
+          material={materials["Material.003"]}
+        />
+      </group>
+      <mesh
+        name="macbook_letras"
+        castShadow
+        receiveShadow
+        geometry={nodes.macbook_letras.geometry}
+        material={materials["Material.005"]}
+        position={[5.592, 1.859, 0.238]}
+        rotation={[-1.57, -0.112, 1.582]}
+        scale={0.362}
+      />
+      <mesh
+        name="Plano"
+        castShadow
+        receiveShadow
+        geometry={nodes.Plano.geometry}
+        material={materials.pared_invisible}
+        position={[-0.92, 3.215, 6.025]}
+        rotation={[Math.PI / 2, 0, Math.PI]}
+        scale={[9.974, 1, 3.443]}
+      />
+      <group
+        name="planta"
+        position={[7.598, 1.548, -5.292]}
+        rotation={[-1.566, 0.014, -3.082]}
+        scale={0.436}
+      >
+        <mesh
+          name="Cylinder003_0"
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder003_0.geometry}
+          material={materials.Mat1}
+        />
+        <mesh
+          name="Cylinder003_0_1"
+          castShadow
+          receiveShadow
+          geometry={nodes.Cylinder003_0_1.geometry}
+          material={materials.hojas}
+        />
+      </group>
+      <mesh
+        name="techo_marco"
+        castShadow
+        receiveShadow
+        geometry={nodes.techo_marco.geometry}
+        material={materials["Mat1.001"]}
+        position={[-0.869, 6.149, 3.211]}
+        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+        scale={3.491}
+      />
+      <mesh
+        name="puerta"
+        castShadow
+        receiveShadow
+        geometry={nodes.puerta.geometry}
+        material={materials["Material.010"]}
+        position={[0.757, 2.677, 12.856]}
+        rotation={[-Math.PI / 2, 0, 1.575]}
+        scale={[0.113, 0.113, 0.108]}
+      />
+      <mesh
+        name="Suelo"
+        castShadow
+        receiveShadow
+        geometry={nodes.Suelo.geometry}
+        material={materials.floor}
+        position={[-0.93, 0.019, 3.215]}
+        scale={[10.049, 1.093, 6.29]}
+      />
+      <mesh
+        name="tv_screen"
+        castShadow
+        receiveShadow
+        geometry={nodes.tv_screen.geometry}
+        material={materials.parallel}
+        position={[-6.579, 3.678, -6.062]}
+        rotation={[Math.PI / 2, 0, 0.001]}
+        scale={[3.458, 3.919, 3.982]}
+      />
+      <group
+        name="tv_marco"
+        position={[-6.56, 3.679, -6.284]}
+        scale={[3.939, 2.314, 0.246]}
+      >
+        <mesh
+          name="Cubo011"
+          castShadow
+          receiveShadow
+          geometry={nodes.Cubo011.geometry}
+          material={materials.tvblack}
+        />
+        <mesh
+          name="Cubo011_1"
+          castShadow
+          receiveShadow
+          geometry={nodes.Cubo011_1.geometry}
+          material={materials.logo}
+        />
+      </group>
+      <mesh
+        name="lampara_techo"
+        castShadow
+        receiveShadow
+        geometry={nodes.lampara_techo.geometry}
+        material={materials.vidroFoco}
+        position={[-0.008, 6.352, 0.239]}
+        rotation={[0, -0.54, Math.PI]}
+        scale={[0.493, 0.048, 0.493]}
+      />
+      <mesh
+        name="mesita"
+        castShadow
+        receiveShadow
+        geometry={nodes.mesita.geometry}
+        material={materials.Mat1}
+        position={[-6.443, 0.518, 0.46]}
+        scale={[0.551, 0.487, 0.487]}
+      />
+      <group
+        name="room"
+        position={[-0.838, 3.359, -0.167]}
+        scale={[14.14, 5.354, 6.28]}
+      >
+        <mesh
+          name="Cubo"
+          castShadow
+          receiveShadow
+          geometry={nodes.Cubo.geometry}
+          material={materials["Material.001"]}
+        />
+        <mesh
+          name="Cubo_1"
+          castShadow
+          receiveShadow
+          geometry={nodes.Cubo_1.geometry}
+          material={materials.techo}
+        />
+      </group>
+      <mesh
+        name="nodo_nosotros"
+        castShadow
+        receiveShadow
+        geometry={nodes.nodo_nosotros.geometry}
+        material={nodes.nodo_nosotros.material}
+        position={[-1.62, 2.779, -6.203]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={[0.468, 0.113, 0.468]}
+        onClick={handleOnClick}
+        onPointerEnter={handleOnPointerEnter}
+        onPointerLeave={handleOnPointerLeave}
+      />
+      <mesh
+        name="nodo_proyectos"
+        castShadow
+        receiveShadow
+        geometry={nodes.nodo_proyectos.geometry}
+        material={nodes.nodo_proyectos.material}
+        position={[0.176, 4.612, -6.142]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={[0.468, 0.113, 0.468]}
+        onClick={handleOnClick}
+        onPointerEnter={handleOnPointerEnter}
+        onPointerLeave={handleOnPointerLeave}
+      />
+      <mesh
+        name="Opciones"
+        castShadow
+        receiveShadow
+        geometry={nodes.Opciones.geometry}
+        material={materials.luna}
+        position={[1.143, 1.573, -6.131]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={0.47}
+      />
+      <mesh
+        name="nodo_servicios"
+        castShadow
+        receiveShadow
+        geometry={nodes.nodo_servicios.geometry}
+        material={nodes.nodo_servicios.material}
+        position={[1.02, 0.858, -6.142]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={[0.468, 0.113, 0.468]}
+      />
+      <mesh
+        name="nodo_contacto"
+        castShadow
+        receiveShadow
+        geometry={nodes.nodo_contacto.geometry}
+        material={nodes.nodo_contacto.material}
+        position={[4.004, 1.877, -6.142]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={[0.468, 0.113, 0.468]}
+      />
+      <mesh
+        name="nodo_desarrollo"
+        castShadow
+        receiveShadow
+        geometry={nodes.nodo_desarrollo.geometry}
+        material={nodes.nodo_desarrollo.material}
+        position={[3.859, 4.16, -6.142]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={[0.468, 0.113, 0.468]}
+      />
+      <group name="Círculo002" position={[-0.011, 6.322, 0.231]} scale={0.434}>
+        <mesh
+          name="Círculo"
+          castShadow
+          receiveShadow
+          geometry={nodes.Círculo.geometry}
+          material={materials.white}
+        />
+        <mesh
+          name="Círculo_1"
+          castShadow
+          receiveShadow
+          geometry={nodes.Círculo_1.geometry}
+          material={materials.tvblack}
+        />
+      </group>
+      <mesh
+        name="ventana_marco"
+        castShadow
+        receiveShadow
+        geometry={nodes.ventana_marco.geometry}
+        material={materials.tvblack}
+        position={[8.673, 3.421, 0.044]}
+        rotation={[0, Math.PI / 2, 0]}
+        scale={[4.978, 2.302, 0.297]}
+      />
+      <mesh
+        name="galaxia_marco"
+        castShadow
+        receiveShadow
+        geometry={nodes.galaxia_marco.geometry}
+        material={materials.tvblack}
+        position={[-10.74, 3.491, 0.1]}
+        rotation={[0, Math.PI / 2, 0]}
+        scale={[2.592, 1.54, 0.067]}
+      />
+      <mesh
+        name="Boton"
+        geometry={nodes.Boton.geometry}
+        material={materials.blue}
+        position={[-12.386, 1.933, -0.041]}
+        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+        scale={[0.305, 0.046, 0.112]}
+      />
+      <mesh
+        name="galaxia"
+        
+        geometry={nodes.galaxia.geometry}
+        material={materials.galaxia}
+        position={[-11.83, 4.311, -0.009]}
+        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+        scale={[7.756, 3.735, 3.735]}
+      />
+      <mesh
+        name="planetas"
+  
+        geometry={nodes.planetas.geometry}
+        material={materials.bakedPlanets}
+        position={[-12.372, 3.514, 1.61]}
+        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+        scale={0.087}
+      />
+      <mesh
+        name="indicadores"
+   
+        geometry={nodes.indicadores.geometry}
+        material={materials.screengrid}
+        position={[-12.467, 2.551, -0.181]}
+        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+        scale={[0.425, 0.335, 0.26]}
+      />
+      <mesh
+        name="universe"
+   
+        geometry={nodes.universe.geometry}
+        material={materials.universe}
+        position={[-12.852, 3.335, -0.017]}
+        rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+        scale={[4.912, 3.557, 4.708]}
+      />
     </group>
   );
 }

@@ -27,7 +27,7 @@ export default function Experience()
         </EffectComposer>
     </Suspense>
 
-    <OrbitControls makeDefault />
+{/*     <OrbitControls makeDefault /> */}
     <Environment {...enviromentConfig}/>
     <pointLight {...pointLightConfig} shadow-bias={-0.0003} shadow-mapSize={ [ 512*6,512*6] } shadow-normalBias={0.01}/>
     <ambientLight intensity={1} color={"#5d5d5d"} />
