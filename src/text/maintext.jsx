@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 
 
-export function TextComponents(texto) {
+export default function TextComponents(props) {
     const [textoboton, changeTextBoton] = useState('Iniciar');
     const downloadRef = useRef();
     const uploadRef = useRef();
@@ -21,7 +21,8 @@ export function TextComponents(texto) {
 
 
   return (
-    <>
+    
+    <group {...props} dispose={null}>
       <Text position={[2, 4.5, -3.3]} fontSize={0.5} color={'#ffffff'} maxWidth={7} textAlign='center' font="./fonts/sora.ttf" >
       Prueba tu velocidad de internet <meshStandardMaterial toneMapped={false} emissive={"#ffffff"} emissiveIntensity={2} />
     </Text>
@@ -39,9 +40,10 @@ export function TextComponents(texto) {
         {resultupload} 
         <meshStandardMaterial toneMapped={false} emissive={"#ffffff"} emissiveIntensity={2} />
       </Text>
-      <Text position={[2.05, -0.17, -3.3]} fontSize={0.35} font="./fonts/sora.ttf">
+      <Text position={[2.05, 0, -3.3]}  fontSize={0.35} font="./fonts/sora.ttf">
         {textoboton}
     </Text>
-    </>
+    </group>
+    
   );
 }

@@ -34,7 +34,7 @@ export default function Cbl(props)
     const handleOnClick = (intersect) => {
         intersect.stopPropagation();
         start();
-        animatee();
+        /* animatee(); */
         if (intersect.object.material.color === '#ff0000') {
           intersect.object.material.color.set('"#0000ff"');
         }
