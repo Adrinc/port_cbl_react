@@ -92,7 +92,7 @@ const handleOnPointerLeave = (intersect) => {
           receiveShadow
           geometry={nodes.sillon.geometry}
           material={materials.Material_2146932551}
-          position={[-6.562, 0.917, 0.394]}
+          position={[-6.562, 0.801, 0.394]}
           rotation={[-Math.PI / 2, 0, 0.023]}
           scale={0.002}
         />

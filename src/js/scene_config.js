@@ -19,13 +19,13 @@ import * as THREE from 'three'
     };
 
     export const pointLightConfig = {
-        name: 'directional_light',
-        castShadow: true,
-        intensity: 16,
-        position: [2.9, 7, -14.5],
-        penumbra: 0.5,
-        color: '#2e2e30',
-      };
+      name: 'directional_light',
+      castShadow: true,
+      intensity: 16,
+      position: [2.9, 7, -14.5],
+      penumbra: 0.5,
+      color: '#2e2e30',
+    };
 
 export const vignetteConfig = {
     offset: 0.1,
