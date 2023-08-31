@@ -2,10 +2,10 @@ import './style.css'
 import './index.css'
 import ReactDOM from 'react-dom/client'
 import { Canvas } from '@react-three/fiber'
-import Experience from './Experience.jsx'
+import Scene from './Scene.jsx'
 import * as THREE from 'three'
 import Navbar from './components/navbar'
-
+import { BrowserRouter as Router } from 'react-router-dom'; 
 
 
 
@@ -15,8 +15,11 @@ const root = ReactDOM.createRoot(document.querySelector('#root'))
 
 root.render(
     <>
+     <Router>
+
+
     <Navbar />
-   
+    </Router>
     <Canvas
     dpr={[0.5, 1.2]}
     performance= {{ 
@@ -27,13 +30,13 @@ root.render(
         regress: 0.5
       }}
         shadows
-        camera={ {
+/*         camera={ {
             fov: 45,
             near: 0.1,
             far: 2000,
             position: [ 2, 3, 6.3 ],
             rotation: [ 0, 0, 0 ]
-        } }
+        } } */
         gl={ { 
             antialias: false,
             alpha: true,
@@ -47,7 +50,8 @@ root.render(
             outputColorSpace: THREE.SRGBColorSpace,
         } }
     >
-        <Experience />
+        <Scene />
     </Canvas>
+   
     </>
 )

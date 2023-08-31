@@ -136,7 +136,7 @@ function setDescarga(download) {
   //-----------------------------------------------------
 
   let shouldStopAnimation = false; 
-  let carAnimationCompleted = true;
+
 
 
 

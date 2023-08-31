@@ -562,6 +562,7 @@ function OpenSpeedtest() {
         Show.Symbol(2);
         Status = "busy";
         stop = 0;
+       
         resetAnimation();
         retryButton();
       }
@@ -1021,13 +1022,13 @@ function openSpeedtestEngine(){
     document.getElementById("secondButtonDesk").classList.add("disabled");
   }
   function start() {
-    if (carAnimationCompleted) {
+
       stopTest = false;
       shouldStopAnimation = false;
       resetValues();
       resetVisuals();
       initTest();
-    }
+    
   }
 function resetAnimation(){
   shouldStopAnimation = true; 
