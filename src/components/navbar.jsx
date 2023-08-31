@@ -1,12 +1,38 @@
 import React,{ useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AnimationsGsap } from '../js/animations';
 
-export default function Navbar({ scrollToSection }) {
+export default function Navbar({ camera }) {
+
+
+  const animations = new AnimationsGsap();
 
   const [selectedSection, setSelectedSection] = useState('Inicio'); // Estado para la sección seleccionada
 
   const handleSectionClick = (sectionName) => {
     setSelectedSection(sectionName);
+    switch (sectionName) {
+      case "Inicio":
+          animations.animationToRoot( camera.current);
+          break;
+      case "SpeedTest":
+         
+          animations.animationToGalaxy( camera.current);
+          break;
+      case "Nosotros":
+         
+          animations.animationToNosotros( camera.current);
+          break;
+      case "Servicios":
+          console.log("servicios");
+          break;
+      case "contacto":
+
+          break;
+      default:
+          break;
+  }
+
 
 
   };
@@ -20,6 +46,7 @@ export default function Navbar({ scrollToSection }) {
 
           <div className="hidden md:flex space-x-5 font-medium">
           <Link to="/" className={`hover:underline ${selectedSection === 'Inicio' ? 'text-blue-500' : ''}`} onClick={() => handleSectionClick('Inicio')} style={{ fontFamily: 'Sora' }}> Inicio</Link>
+          <Link to="/SpeedTest" className={`hover:underline ${selectedSection === 'SpeedTest' ? 'text-blue-500' : ''}`} onClick={() => handleSectionClick('SpeedTest')} style={{ fontFamily: 'Sora' }}> SpeedTest</Link>
           <Link to="/nosotros" className={`hover:underline ${selectedSection === 'Nosotros' ? 'text-blue-500' : ''}`} onClick={() => handleSectionClick('Nosotros')} style={{ fontFamily: 'Sora' }}> Nosotros</Link>
           <Link to="/proyectos" className={`hover:underline ${selectedSection === 'Proyectos' ? 'text-blue-500' : ''}`} onClick={() => handleSectionClick('Proyectos')} style={{ fontFamily: 'Sora' }}> Proyectos</Link>
           <Link to="/servicios" className={`hover:underline ${selectedSection === 'Servicios' ? 'text-blue-500' : ''}`} onClick={() => handleSectionClick('Servicios')} style={{ fontFamily: 'Sora' }}> Servicios</Link>

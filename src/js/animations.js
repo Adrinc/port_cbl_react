@@ -34,6 +34,7 @@ export class AnimationsGsap{
 //ir a televisor
 
  animationToTelevisor(camera){
+  
     globalVariables.nowWatching = 'animationToTelevisor'; 
     globalVariables.listenMouseWheel=false;
     gsap.to(camera.position, {duration: 1.25, x: -10.25, y: 0.3, z: -8.5, ease: "power2.inOut"});

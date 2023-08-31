@@ -1,4 +1,4 @@
-import {Sparkles, Html, BakeShadows, Environment, OrbitControls, PerspectiveCamera } from '@react-three/drei'
+import {Sparkles, Html, BakeShadows, Environment, OrbitControls, PerspectiveCamera, useScroll } from '@react-three/drei'
 import { Perf } from 'r3f-perf' 
 import Officina from './oficina_model_plus'
 import React, { Suspense, useRef, useEffect } from 'react'
@@ -8,23 +8,16 @@ import { ToneMapping , ChromaticAberration, Bloom, DepthOfField, EffectComposer,
 import { enviromentConfig, pointLightConfig } from './js/scene_config';
 import { vignetteConfig, chromaticAberrationConfig, bloomConfig, noiseConfig, toneMappingConfig } from './js/scene_config';
 import TextComponents from './text/maintext'
-import { gsap } from "gsap";
+
 
 export default function Scene()
 {
-
-    const cameraRef = useRef();
-    
-    useEffect(() => {
-        console.log(cameraRef.current);
-/*         gsap.to(cameraRef.current.position, {duration: 6, y: 10, x: 0, z: 0, ease: "power2.out"}); */
-    }, [])
 
 
     return <> 
 
     <color attach="background" args={["#000"]} />
-    
+   
     <Suspense fallback={null}>
         <EffectComposer multisampling={4}>
             <ToneMapping {...toneMappingConfig}/>
@@ -35,7 +28,6 @@ export default function Scene()
         </EffectComposer>
     </Suspense>
    
-    <PerspectiveCamera makeDefault far={2000} near={0.1} fov={45} position={[2, 3, 6.3]} rotation={[0, 0, 0]} ref={cameraRef} />
     
    
 
@@ -53,7 +45,6 @@ export default function Scene()
         <BakeShadows />
         <VideoTextureCBLUNA/>
         <TextComponents rotation={[0, Math.PI/2,0]}   position={[-18.3, 1.03, -12.67]}/>
-        {/*@ Este ocasiona un error de buffer compute */}
         <Sparkles rotation={[0, Math.PI/2,0]}   position={[-21, 3.5, -14]} count={200} scale={[6.5,6.5,2]} size={2.5} speed={0.1}/> 
     </Suspense>
 

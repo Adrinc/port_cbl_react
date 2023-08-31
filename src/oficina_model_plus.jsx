@@ -36,10 +36,10 @@ export default function Officina(props) {
         animationsGsap.nodo_servicios();
         break;
       case "nodo_contacto":
-        animationsGsap.nodo_contacto();
+       /*  animationsGsap.nodo_contacto(); */
         break;
       case "nodo_desarrollo":
-        animationsGsap.nodo_desarrollo();
+     /*    animationsGsap.nodo_desarrollo(); */
         break;
       case "Boton":
         //start actions
@@ -317,6 +317,9 @@ const handleOnPointerLeave = (intersect) => {
           position={[-6.579, 3.678, -6.062]}
           rotation={[Math.PI / 2, 0, 0.001]}
           scale={[3.458, 3.919, 3.982]}
+          onClick={handleOnClick}
+          onPointerEnter={handleOnPointerEnter}
+          onPointerLeave={handleOnPointerLeave}
         />
         <group
           name="Foco"
