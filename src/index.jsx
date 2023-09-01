@@ -6,28 +6,22 @@ import Scene from './Scene.jsx';
 import * as THREE from 'three';
 import Navbar from './components/navbar';
 import { BrowserRouter as Router } from 'react-router-dom'; 
-import { useRef } from 'react'; 
-import {PerspectiveCamera } from '@react-three/drei'
+import {Suspense, useRef, useState } from 'react'; 
+
 
 
 const App = () => {
-  const cameraRef = useRef();
-
-  
+/*   const [sceneLoaded, setSceneLoaded] = useState(true);
+ */  const cameraRef = useRef();
 
   return <>
     <Router>
-      <Navbar camera={cameraRef} />
+{/*       {sceneLoaded ? <Navbar camera={cameraRef} /> : null} */}
       <Canvas
         dpr={[0.5, 1.2]}
-        performance={{
-          current: 1,
-          min: 0.1,
-          max: 1,
-          debounce: 200,
-          regress: 0.5,
-        }}
+        performance={{current: 1,min: 0.1,max: 1,debounce: 200,regress: 0.5}}
         shadows
+        camera={{ far:2000, near: 0.1, fov: 45, position:[2, 3, 6.3], rotation:[0, 0, 0]}}
         gl={{
           antialias: false,
           alpha: true,
@@ -39,14 +33,14 @@ const App = () => {
           gammaOutput: true,
           outputColorSpace: THREE.SRGBColorSpace,
         }}
+        scene={{ background: new THREE.Color('#000') }}
       >
-         <PerspectiveCamera makeDefault far={2000} near={0.1} fov={45} position={[2, 3, 6.3]} rotation={[0, 0, 0]} ref={cameraRef} />
-    
-        <Scene />
+
+        <Scene cameraRef={cameraRef}/>
       </Canvas>
     </Router>
   
-        </>
+ </>
 };
 
 const root = ReactDOM.createRoot(document.querySelector('#root'))

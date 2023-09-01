@@ -4,6 +4,7 @@ import { AnimationsGsap } from '../js/animations';
 
 export default function Navbar({ camera }) {
 
+  console.log(camera);
 
   const animations = new AnimationsGsap();
 
