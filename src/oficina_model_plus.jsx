@@ -6,15 +6,15 @@ import React, { useEffect, useRef } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 import { AnimationsGsap } from "./js/animations.js";
 import globalVariables from './js/globals.js';
-
+import { gsap } from "gsap";
+import * as THREE from 'three';
 
 export default function Officina(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("./models/test.gltf");
   const { actions } = useAnimations(animations, group);
   const animationsGsap = new AnimationsGsap(actions);
-
-
+  
 
   const handleOnClick = (intersect) => {
     
@@ -30,8 +30,12 @@ export default function Officina(props) {
         animationsGsap.animationToNosotros(intersect.camera);
         break;
       case "nodo_proyectos":
+       
+        break;
+      case "nodo_speedtest":
         animationsGsap.animationToGalaxy(intersect.camera);
         break;
+
       case "nodo_servicios":
         animationsGsap.nodo_servicios();
         break;
@@ -39,10 +43,12 @@ export default function Officina(props) {
        /*  animationsGsap.nodo_contacto(); */
         break;
       case "nodo_desarrollo":
-     /*    animationsGsap.nodo_desarrollo(); */
+
         break;
       case "Boton":
         //start actions
+        actions['Satelite'].stop();
+        actions['Astronauta'].stop();
         actions['Satelite'].play();
         actions['Astronauta'].play();
       /*   actions._clip.VacíoAction.play();
@@ -62,11 +68,18 @@ export default function Officina(props) {
 const handleOnPointerEnter = (intersect) => {
   intersect.stopPropagation() 
   document.body.style.cursor = 'pointer';
+  intersect.object.name.includes('Boton')? gsap.to(intersect.object.scale, { x: 0.405, y: 0.046, z: 0.160, duration: 0.5 }) : null;
+  intersect.object.name.includes('nodo')? gsap.to(intersect.object.scale, { x: 0.568, y: 0.213, z: 0.568, duration: 0.5 }) : null;
+  intersect.object.name.includes('nodo')? gsap.to(intersect.object.material, { emissiveIntensity: 2, duration: 0.5 }) : null;
+
 };
 
 const handleOnPointerLeave = (intersect) => {
   intersect.stopPropagation() 
     document.body.style.cursor = 'default';
+    intersect.object.name.includes('Boton')? gsap.to(intersect.object.scale, { x: 0.305, y: 0.046, z: 0.112, duration: 0.5 }) : null;
+    intersect.object.name.includes('nodo')? gsap.to(intersect.object.scale, { x: 0.468, y: 0.113, z: 0.468, duration: 0.5 }) : null;
+    intersect.object.name.includes('nodo')? gsap.to(intersect.object.material, { emissiveIntensity: 0, duration: 0.5 }) : null;
 };
 
   
@@ -76,15 +89,15 @@ const handleOnPointerLeave = (intersect) => {
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <mesh
+      <mesh
           name="logo_cbluna"
           castShadow
           receiveShadow
           geometry={nodes.logo_cbluna.geometry}
           material={materials.luna}
-          position={[1.977, 3.369, -6.189]}
+          position={[1.977, 3.198, -6.189]}
           rotation={[Math.PI / 2, 0, 0]}
-          scale={44.087}
+          scale={41.747}
         />
         <mesh
           name="sillon"
@@ -92,14 +105,13 @@ const handleOnPointerLeave = (intersect) => {
           receiveShadow
           geometry={nodes.sillon.geometry}
           material={materials.Material_2146932551}
-          position={[-6.562, 0.801, 0.394]}
+          position={[-6.562, 0.75, 0.394]}
           rotation={[-Math.PI / 2, 0, 0.023]}
           scale={0.002}
         />
         <mesh
           name="ciudad"
-          castShadow
-          receiveShadow
+      
           geometry={nodes.ciudad.geometry}
           material={materials["884171"]}
           position={[12.933, 4.926, 0.118]}
@@ -181,42 +193,17 @@ const handleOnPointerLeave = (intersect) => {
             geometry={nodes.Object_12_3.geometry}
             material={materials["Material.004"]}
           />
-          <mesh
-            name="Object_12_4"
-            castShadow
-            receiveShadow
-            geometry={nodes.Object_12_4.geometry}
-            material={materials["Material.005"]}
-          />
         </group>
-        <group
+        <mesh
           name="switch"
+          castShadow
+          receiveShadow
+          geometry={nodes["switch"].geometry}
+          material={materials.Mat1}
           position={[6.494, 3.233, -6.15]}
           rotation={[-1.471, 0, 0]}
           scale={[0.276, 0.112, 0.275]}
-        >
-          <mesh
-            name="Switch_Mat3_0"
-            castShadow
-            receiveShadow
-            geometry={nodes.Switch_Mat3_0.geometry}
-            material={materials.Mat3}
-          />
-          <mesh
-            name="Switch_Mat3_0_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Switch_Mat3_0_1.geometry}
-            material={materials.Mat1}
-          />
-          <mesh
-            name="Switch_Mat3_0_2"
-            castShadow
-            receiveShadow
-            geometry={nodes.Switch_Mat3_0_2.geometry}
-            material={materials.Mat2}
-          />
-        </group>
+        />
         <group
           name="macbook_pantalla"
           position={[5.58, 2.256, 0.238]}
@@ -305,7 +292,7 @@ const handleOnPointerLeave = (intersect) => {
           receiveShadow
           geometry={nodes.Suelo.geometry}
           material={materials.floor}
-          position={[-0.93, 0.019, 3.215]}
+          position={[-0.873, -0.016, 3.32]}
           scale={[10.049, 1.093, 6.29]}
         />
         <mesh
@@ -363,7 +350,7 @@ const handleOnPointerLeave = (intersect) => {
           receiveShadow
           geometry={nodes.mesita.geometry}
           material={materials.Mat1}
-          position={[-6.443, 0.518, 0.46]}
+          position={[-6.443, 0.463, 0.46]}
           scale={[0.551, 0.487, 0.487]}
         />
         <group
@@ -391,8 +378,8 @@ const handleOnPointerLeave = (intersect) => {
           castShadow
           receiveShadow
           geometry={nodes.nodo_nosotros.geometry}
-          material={nodes.nodo_nosotros.material}
-          position={[-1.62, 2.779, -6.203]}
+          material={ new THREE.MeshStandardMaterial({color: 0xD6D6D6, toneMapped: false, emissive:"#00D1FF", emissiveIntensity:0}) }
+          position={[-1.54, 2.779, -6.203]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={[0.468, 0.113, 0.468]}
           onClick={handleOnClick}
@@ -404,8 +391,8 @@ const handleOnPointerLeave = (intersect) => {
           castShadow
           receiveShadow
           geometry={nodes.nodo_proyectos.geometry}
-          material={nodes.nodo_proyectos.material}
-          position={[0.176, 4.612, -6.142]}
+          material={ new THREE.MeshStandardMaterial({color: 0xD6D6D6, toneMapped: false, emissive:"#00D1FF", emissiveIntensity:0}) }
+          position={[-0.047, 4.677, -6.142]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={[0.468, 0.113, 0.468]}
           onClick={handleOnClick}
@@ -413,44 +400,43 @@ const handleOnPointerLeave = (intersect) => {
           onPointerLeave={handleOnPointerLeave}
         />
         <mesh
-          name="Opciones"
-          castShadow
-          receiveShadow
-          geometry={nodes.Opciones.geometry}
-          material={materials.luna}
-          position={[1.143, 1.573, -6.131]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={0.47}
-        />
-        <mesh
           name="nodo_servicios"
           castShadow
           receiveShadow
           geometry={nodes.nodo_servicios.geometry}
-          material={nodes.nodo_servicios.material}
-          position={[1.02, 0.858, -6.142]}
+          material={ new THREE.MeshStandardMaterial({color: 0xD6D6D6, toneMapped: false, emissive:"#00D1FF", emissiveIntensity:0}) }
+          position={[2.399, 0.858, -6.142]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={[0.468, 0.113, 0.468]}
+          onClick={handleOnClick}
+          onPointerEnter={handleOnPointerEnter}
+          onPointerLeave={handleOnPointerLeave}
         />
         <mesh
           name="nodo_contacto"
           castShadow
           receiveShadow
           geometry={nodes.nodo_contacto.geometry}
-          material={nodes.nodo_contacto.material}
-          position={[4.004, 1.877, -6.142]}
+          material={ new THREE.MeshStandardMaterial({color: 0xD6D6D6, toneMapped: false, emissive:"#00D1FF", emissiveIntensity:0}) }
+          position={[4.004, 2.308, -6.142]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={[0.468, 0.113, 0.468]}
+          onClick={handleOnClick}
+          onPointerEnter={handleOnPointerEnter}
+          onPointerLeave={handleOnPointerLeave}
         />
         <mesh
           name="nodo_desarrollo"
           castShadow
           receiveShadow
           geometry={nodes.nodo_desarrollo.geometry}
-          material={nodes.nodo_desarrollo.material}
-          position={[3.859, 4.16, -6.142]}
+          material={ new THREE.MeshStandardMaterial({color: 0xD6D6D6, toneMapped: false, emissive:"#00D1FF", emissiveIntensity:0}) }
+          position={[3.318, 4.605, -6.142]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={[0.468, 0.113, 0.468]}
+          onClick={handleOnClick}
+          onPointerEnter={handleOnPointerEnter}
+          onPointerLeave={handleOnPointerLeave}
         />
         <group
           name="Círculo002"
@@ -492,11 +478,28 @@ const handleOnPointerLeave = (intersect) => {
           rotation={[0, Math.PI / 2, 0]}
           scale={[2.592, 1.54, 0.067]}
         />
-       <mesh
+
+
+
+        
+        <mesh
+          name="nodo_speedtest"
+          castShadow
+          receiveShadow
+          geometry={nodes.nodo_speedtest.geometry}
+          material={ new THREE.MeshStandardMaterial({color: 0xD6D6D6, toneMapped: false, emissive:"#00D1FF", emissiveIntensity:0}) }
+          position={[-0.54, 1.031, -6.026]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={[0.468, 0.113, 0.468]}
+          onClick={handleOnClick}
+          onPointerEnter={handleOnPointerEnter}
+          onPointerLeave={handleOnPointerLeave}
+        />
+        <mesh
           name="Boton"
-       
+        
           geometry={nodes.Boton.geometry}
-          material={materials.blue}
+          material={ new THREE.MeshBasicMaterial({color: 0x000fff, toneMapped: false }) }
           position={[-12.386, 2.027, 0.137]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
           scale={[0.305, 0.046, 0.112]}
@@ -506,7 +509,7 @@ const handleOnPointerLeave = (intersect) => {
         />
         <mesh
           name="galaxia"
-     
+       
           geometry={nodes.galaxia.geometry}
           material={materials.galaxia}
           position={[-11.83, 4.311, 0.169]}
@@ -524,7 +527,7 @@ const handleOnPointerLeave = (intersect) => {
         />
         <mesh
           name="indicadores"
-    
+         
           geometry={nodes.indicadores.geometry}
           material={materials.screengrid}
           position={[-12.467, 2.551, -0.003]}
@@ -533,7 +536,7 @@ const handleOnPointerLeave = (intersect) => {
         />
         <mesh
           name="universe"
-
+       
           geometry={nodes.universe.geometry}
           material={materials.universe}
           position={[-13.063, 3.335, 0.161]}
@@ -542,7 +545,7 @@ const handleOnPointerLeave = (intersect) => {
         />
         <mesh
           name="satelite"
-     
+        
           geometry={nodes.satelite.geometry}
           material={materials.bakedPlanets}
           position={[-12.214, 3.56, 0.529]}
@@ -551,7 +554,7 @@ const handleOnPointerLeave = (intersect) => {
         />
         <mesh
           name="astronauta"
-   
+          
           geometry={nodes.astronauta.geometry}
           material={materials.bakedPlanets}
           position={[-12.207, 3.504, -0.089]}
