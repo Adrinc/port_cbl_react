@@ -3,7 +3,7 @@
 /* import {objectsToTest} from '../../script.js'; */
 
 export class GlobalVariables{
-    listenMouseWheel = false;
+    listenMouseWheel = true;
     desactivateHover = true;
     isAnimating = true;
     observing = false;

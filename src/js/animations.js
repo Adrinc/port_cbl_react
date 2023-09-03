@@ -45,6 +45,11 @@ export class AnimationsGsap{
     }});
 
 }
+ animationToProyectos(camera){
+  
+console.log('animationToProyectos ');
+console.log(camera);
+}
 
  animationToTelevisorZoom(camera){
     globalVariables.nowWatching = 'animationToTelevisorZoom';

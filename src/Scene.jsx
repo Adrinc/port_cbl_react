@@ -1,7 +1,7 @@
 import {Sparkles, Html, BakeShadows, Environment, OrbitControls, PerspectiveCamera} from '@react-three/drei'
 import { Perf } from 'r3f-perf' 
 import Officina from './oficina_model_plus'
-import React, { Suspense } from 'react'
+import React, { Suspense, useEffect } from 'react'
 import Placeholder from './Placeholder'
 import VideoTextureCBLUNA from './video'
 import { ToneMapping , ChromaticAberration, Bloom, EffectComposer, Noise, Vignette } from '@react-three/postprocessing'
@@ -14,12 +14,10 @@ import MenuText from './text/menu_text'
 export default function Scene({ cameraRef })
 {
 
-
-    
     return <> 
 
     <Suspense fallback={null}>
-        <EffectComposer multisampling={4}>
+        <EffectComposer multisampling={0}>
             <ToneMapping {...toneMappingConfig}/>
             <Vignette {...vignetteConfig} />
             <ChromaticAberration {...chromaticAberrationConfig} />

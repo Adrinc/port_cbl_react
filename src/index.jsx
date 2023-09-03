@@ -7,7 +7,7 @@ import * as THREE from 'three';
 import Navbar from './components/navbar';
 import { BrowserRouter as Router } from 'react-router-dom'; 
 import {Suspense, useRef, useState } from 'react'; 
-
+import MouseListener  from './js/listeners/listenmouse'
 
 
 const App = () => {
@@ -35,8 +35,8 @@ const App = () => {
         }}
         scene={{ background: new THREE.Color('#000') }}
       >
-
         <Scene cameraRef={cameraRef}/>
+        <MouseListener camera={cameraRef}  />
       </Canvas>
     </Router>
   
