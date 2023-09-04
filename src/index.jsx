@@ -6,17 +6,19 @@ import Scene from './Scene.jsx';
 import * as THREE from 'three';
 import Navbar from './components/navbar';
 import { BrowserRouter as Router } from 'react-router-dom'; 
-import {Suspense, useRef, useState } from 'react'; 
+import {Suspense, useRef, useState, useEffect } from 'react'; 
 import MouseListener  from './js/listeners/listenmouse'
+import ScreenSizeListener from './js/listeners/listenScreenSize';
 
 
 const App = () => {
-/*   const [sceneLoaded, setSceneLoaded] = useState(true);
- */  const cameraRef = useRef();
+const cameraRef = useRef();
+const modelRef = useRef();
+
+
 
   return <>
     <Router>
-{/*       {sceneLoaded ? <Navbar camera={cameraRef} /> : null} */}
       <Canvas
         dpr={[0.5, 1.2]}
         performance={{current: 1,min: 0.1,max: 1,debounce: 200,regress: 0.5}}
@@ -35,8 +37,9 @@ const App = () => {
         }}
         scene={{ background: new THREE.Color('#000') }}
       >
-        <Scene cameraRef={cameraRef}/>
+        <Scene cameraRef={cameraRef} modelRef={modelRef}/>
         <MouseListener camera={cameraRef}  />
+        <ScreenSizeListener camera={cameraRef} modelRef={modelRef} />
       </Canvas>
     </Router>
   
