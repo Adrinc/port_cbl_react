@@ -1,11 +1,12 @@
 
 import { Text } from '@react-three/drei';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, forwardRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 
 
-export default function SpeedTestText(props) {
-    const [textoboton, changeTextBoton] = useState('Iniciar');
+
+    const SpeedTestText = forwardRef((props, SpeedTestTextRef) => {
+    const [textoboton, changeTextBoton] = useState("Iniciar");
     const downloadRef = useRef();
     const uploadRef = useRef();
    
@@ -22,7 +23,7 @@ export default function SpeedTestText(props) {
 
   return (
     
-    <group {...props} dispose={null}>
+    <group ref={SpeedTestTextRef} {...props} dispose={null} >
       <Text position={[2, 4.5, -3.3]} fontSize={0.5} color={'#ffffff'} maxWidth={7} textAlign='center' font="./fonts/sora.ttf" >
       Prueba tu velocidad de internet <meshStandardMaterial toneMapped={false} emissive={"#ffffff"} emissiveIntensity={2} />
     </Text>
@@ -46,4 +47,6 @@ export default function SpeedTestText(props) {
     </group>
     
   );
-}
+});
+
+export default SpeedTestText;

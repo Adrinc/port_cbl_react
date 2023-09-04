@@ -14,6 +14,8 @@ import ScreenSizeListener from './js/listeners/listenScreenSize';
 const App = () => {
 const cameraRef = useRef();
 const modelRef = useRef();
+const speedTextRef= useRef();
+const menuTextRef= useRef();
 
 
 
@@ -37,9 +39,9 @@ const modelRef = useRef();
         }}
         scene={{ background: new THREE.Color('#000') }}
       >
-        <Scene cameraRef={cameraRef} modelRef={modelRef}/>
+        <Scene cameraRef={cameraRef} modelRef={modelRef} menuTextRef={menuTextRef} speedTextRef={speedTextRef}/>
         <MouseListener camera={cameraRef}  />
-        <ScreenSizeListener camera={cameraRef} modelRef={modelRef} />
+        <ScreenSizeListener camera={cameraRef} modelRef={modelRef} menuTextRef={menuTextRef}/>
       </Canvas>
     </Router>
   
