@@ -9,7 +9,7 @@ import { enviromentConfig, pointLightConfig } from './js/scene_config';
 import { vignetteConfig, chromaticAberrationConfig, bloomConfig, noiseConfig, toneMappingConfig } from './js/scene_config';
 import SpeedTestText from './text/speedtest_text'
 import MenuText from './text/menu_text'
-
+import ContactForm from './components/formField'
 
 export default function Scene({ cameraRef, modelRef, menuTextRef, SpeedTestTextRef })
 {
@@ -59,6 +59,10 @@ export default function Scene({ cameraRef, modelRef, menuTextRef, SpeedTestTextR
         <Html occlude wrapperClass="htmlScreen" position={[14.165,1.48,-14.52]}   distanceFactor={ 1.17 }  transform scale={[0.38,0.46,0.5]}  rotation={ [ 0, 1.57, 0 ] }><iframe src="https://adrinc.github.io/ifnosotros/"  /></Html>
         <BakeShadows/>
 
+        
+        <Html occlude distanceFactor={ 1.17 }  transform  position={[2, 3, -5] } scale={[2,2,2]} > {/* Ajusta la posición según tu diseño */}
+          <ContactForm />
+        </Html>
     </Suspense>
 
     </>
