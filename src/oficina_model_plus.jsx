@@ -18,6 +18,7 @@ const Officina = forwardRef((props, ref) => {
 
 
   
+  ref.current.children[0].getObjectByName("logo_cbluna").attach(ref.current.__r3f.parent.getObjectByName("logo_cbluna_text"));
   ref.current.children[0].getObjectByName("nodo_nosotros").attach(ref.current.__r3f.parent.getObjectByName("nosotros_text"));
   ref.current.children[0].getObjectByName("nodo_servicios").attach(ref.current.__r3f.parent.getObjectByName("servicios_text"));
   ref.current.children[0].getObjectByName("nodo_speedtest").attach(ref.current.__r3f.parent.getObjectByName("speedtest_text"));
@@ -109,8 +110,7 @@ const handleOnPointerLeave = (intersect) => {
       <group name="Scene">
       <mesh
           name="logo_cbluna"
-          castShadow
-          receiveShadow
+          
           geometry={nodes.logo_cbluna.geometry}
           material={materials.luna}
           position={[1.977, 3.198, -6.189]}
