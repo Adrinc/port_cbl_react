@@ -10,6 +10,7 @@ import { vignetteConfig, chromaticAberrationConfig, bloomConfig, noiseConfig, to
 import SpeedTestText from './text/speedtest_text'
 import MenuText from './text/menu_text'
 import ContactForm from './components/formField'
+import ScreenSizeListener from './js/listeners/listenScreenSize';
 
 export default function Scene({ cameraRef, modelRef, menuTextRef, SpeedTestTextRef })
 {
@@ -60,9 +61,10 @@ export default function Scene({ cameraRef, modelRef, menuTextRef, SpeedTestTextR
         <BakeShadows/>
 
         
-        <Html occlude distanceFactor={ 1.17 }  transform  position={[2, 3, -5] } scale={[2,2,2]} > {/* Ajusta la posición según tu diseño */}
+       {/*  <Html occlude distanceFactor={ 1.17 }  transform  position={[14.2, 1.48, -14.52] } scale={[1,1,1]} rotation={ [ 0, 1.57, 0 ] } >
           <ContactForm />
-        </Html>
+        </Html> */}
+        <ScreenSizeListener camera={cameraRef} modelRef={modelRef} menuTextRef={menuTextRef}/>
     </Suspense>
 
     </>

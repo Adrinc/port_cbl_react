@@ -8,7 +8,7 @@ import Navbar from './components/navbar';
 import { BrowserRouter as Router } from 'react-router-dom'; 
 import {Suspense, useRef, useState, useEffect } from 'react'; 
 import MouseListener  from './js/listeners/listenmouse'
-import ScreenSizeListener from './js/listeners/listenScreenSize';
+
 
 
 const App = () => {
@@ -41,7 +41,7 @@ const menuTextRef= useRef();
       >
         <Scene cameraRef={cameraRef} modelRef={modelRef} menuTextRef={menuTextRef} speedTextRef={speedTextRef}/>
         <MouseListener camera={cameraRef}  />
-        <ScreenSizeListener camera={cameraRef} modelRef={modelRef} menuTextRef={menuTextRef}/>
+
       </Canvas>
     </Router>
   

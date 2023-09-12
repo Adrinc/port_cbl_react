@@ -96,7 +96,7 @@ const handleOnPointerLeave = (intersect) => {
   intersect.stopPropagation();
     document.body.style.cursor = 'default';
     intersect.object.name.includes('Boton')? gsap.to(intersect.object.scale, { x: 0.305, y: 0.046, z: 0.112, duration: 0.5 }) : null;
-    intersect.object.name.includes('nodo')? gsap.to(intersect.object.scale, { x: 0.468, y: 0.113, z: 0.468, duration: 0.5 }) : null;
+    intersect.object.name.includes('nodo')? gsap.to(intersect.object.scale, { x: 0.468, y: 0.468, z: 0.468, duration: 0.5 }) : null;
     intersect.object.name.includes('nodo')? gsap.to(intersect.object.material, { emissiveIntensity: 0, duration: 0.5 }) : null;
 };
 

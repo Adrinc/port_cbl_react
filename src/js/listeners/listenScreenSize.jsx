@@ -16,6 +16,19 @@ export default function ScreenSizeListener ({camera, modelRef, menuTextRef}) {
       height: window.innerHeight,
     };
   }
+
+  function initCamera(){
+    handleResize();
+  }
+
+
+
+
+
+
+
+
+
  
   // Función para manejar el cambio de tamaño de la ventana
   function handleResize() {
@@ -43,31 +56,30 @@ export default function ScreenSizeListener ({camera, modelRef, menuTextRef}) {
     camera.current.fov=45;
     /* ESCALAS */
     logo_cbluna.scale.set(25,25,25);
-    nodoNosotros.scale.set(0.37,0.37,0.37);
-    nodoSpeedTest.scale.set(0.37,0.37,0.37);
-    nodoContacto.scale.set(0.37,0.37,0.37);
-    nodoServicios.scale.set(0.37,0.37,0.37);
-    nodoDesarrollo.scale.set(0.37,0.37,0.37);
-    nodoProyectos.scale.set(0.37,0.37,0.37);
-
-    
+    nodoNosotros.scale.set(0.30,0.30,0.30);
+    nodoSpeedTest.scale.set(0.30,0.30,0.30);
+    nodoContacto.scale.set(0.30,0.30,0.30);
+    nodoServicios.scale.set(0.30,0.30,0.30);
+    nodoDesarrollo.scale.set(0.30,0.30,0.30);
+    nodoProyectos.scale.set(0.30,0.30,0.30);
     /* POSICIONES */
-
-    logo_cbluna.position.set(1, 3, -5);
+    logo_cbluna.position.set(1.3, 3, -5);
     nodoProyectos.position.set(1, 5, -6.15);
     nodoSpeedTest.position.set(1, 0.5, -6.15);
 
-    nodoNosotros.position.set(3, 5, -6.203);
-    nodoDesarrollo.position.set(3, 3.5, -6.203);
-    nodoContacto.position.set(3, 2, -6.203);
-    nodoServicios.position.set(3, 0.5, -6.203);
+    nodoNosotros.position.set(2.5, 5, -6.203);
+    nodoDesarrollo.position.set(2.5, 3.5, -6.203);
+    nodoContacto.position.set(2.5, 2, -6.203);
+    nodoServicios.position.set(2.5, 0.5, -6.203);
+
+
+
 
     } 
-    else if (newSize.width <= 768) {
+    else if (newSize.width <= 768) { 
     camera.current.position.set(6, 3, 6.3);
     camera.current.fov=45;
     camera.current.zoom=1.5;
-
     /* ESCALAS */
     logo_cbluna.scale.set(28,28,28);
     nodoNosotros.scale.set(0.40,0.40,0.40);
@@ -76,35 +88,70 @@ export default function ScreenSizeListener ({camera, modelRef, menuTextRef}) {
     nodoServicios.scale.set(0.40,0.40,0.40);
     nodoDesarrollo.scale.set(0.40,0.40,0.40);
     nodoProyectos.scale.set(0.40,0.40,0.40);
-
      /* POSICIONES */
-
-     logo_cbluna.position.set(1, 3, -5);
-     nodoProyectos.position.set(1, 5, -6.15);
-     nodoSpeedTest.position.set(1, 0.5, -6.15);
-
+    logo_cbluna.position.set(1, 3, -5);
+    nodoProyectos.position.set(1, 5, -6.15);
+    nodoSpeedTest.position.set(1, 0.5, -6.15);
     nodoNosotros.position.set(3, 5, -6.203);
     nodoDesarrollo.position.set(3, 3.5, -6.203);
     nodoContacto.position.set(3, 2, -6.203);
     nodoServicios.position.set(3, 0.5, -6.203);
     } 
-    else if (newSize.width <= 1024) {
-    camera.current.position.set(7.3, 3, 6.3);
-    camera.current.fov=45;
-    nodoNosotros.position.set(-1.54, 2.779, -6.203);
-     
-    } else {
+
+
+
+    else if (newSize.width <= 1024) { 
     camera.current.position.set(2, 3, 6.3);
-    camera.current.fov=45;  
-    nodoNosotros.position.set(-1.54, 2.779, -6.203);
-    logo_cbluna.position.set(1.977, 3.198, -6.189);
-    logo_cbluna.scale.set(41.747,41.747,41.747);
+    camera.current.fov=60;
+    camera.current.zoom=1;
+      /* ESCALAS */
+      logo_cbluna.scale.set(35,35,35);
+      nodoNosotros.scale.set(0.40,0.40,0.40);
+      nodoSpeedTest.scale.set(0.40,0.40,0.40);
+      nodoContacto.scale.set(0.40,0.40,0.40);
+      nodoServicios.scale.set(0.40,0.40,0.40);
+      nodoDesarrollo.scale.set(0.40,0.40,0.40);
+      nodoProyectos.scale.set(0.40,0.40,0.40);
+       /* POSICIONES */
+      logo_cbluna.position.set(1.977, 3.198, -6.189);
+      nodoProyectos.position.set(-0.047, 4.677, -6.142);
+      nodoSpeedTest.position.set(-0.54, 1.031, -6.026);
+      nodoNosotros.position.set(-1.54, 2.779, -6.203);
+      nodoDesarrollo.position.set(3.318, 4.605, -6.142);
+      nodoContacto.position.set(4.004, 2.308, -6.142);
+      nodoServicios.position.set(2.399, 0.858, -6.142);
+
+     
+    } 
+    
+  
+    else {
+      
+      camera.current.position.set(2, 3, 6.3);
+      camera.current.fov=45;
+      camera.current.zoom=1;
+        /* ESCALAS */
+        logo_cbluna.scale.set(41.747,41.747,41.747);
+        nodoNosotros.scale.set(0.468,0.468,0.468);
+        nodoSpeedTest.scale.set(0.468,0.468,0.468);
+        nodoContacto.scale.set(0.468,0.468,0.468);
+        nodoServicios.scale.set(0.468,0.468,0.468);
+        nodoDesarrollo.scale.set(0.468,0.468,0.468);
+        nodoProyectos.scale.set(0.468,0.468,0.468);
+         /* POSICIONES */
+        logo_cbluna.position.set(1.977, 3.198, -6.189);
+        nodoProyectos.position.set(-0.047, 4.677, -6.142);
+        nodoSpeedTest.position.set(-0.54, 1.031, -6.026);
+        nodoNosotros.position.set(-1.54, 2.779, -6.203);
+        nodoDesarrollo.position.set(3.318, 4.605, -6.142);
+        nodoContacto.position.set(4.004, 2.308, -6.142);
+        nodoServicios.position.set(2.399, 0.858, -6.142);
     }
   }
  
   useEffect(() => {
   
-
+    initCamera()
     // Agregar un event listener para el cambio de tamaño de la ventana
     window.addEventListener('resize', handleResize);
  

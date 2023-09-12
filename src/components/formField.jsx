@@ -51,7 +51,7 @@ function ContactForm() {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
+    <div className="bg-white p-6 rounded-lg shadow-md" style={{ fontFamily: 'Sora' }}>
       <h1 className="text-2xl font-semibold mb-4">Contacto</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">

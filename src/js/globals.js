@@ -8,6 +8,7 @@ export class GlobalVariables{
     isAnimating = true;
     observing = false;
     nowWatching = 'animationToRoot';
+    currentWindowSize="desktop"
     
     globalEnvIntensity = {envIntensity: 2};
 }
